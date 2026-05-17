@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand: #FF4E00; /* Vibrant Orange */
+  --color-hero: #FFD93D; /* Sunny Yellow */
+  --color-project-1: #6BCB77; /* Fresh Green */
+  --color-project-2: #4D96FF; /* Sky Blue */
+  --color-cream: #FFFCF5;
+  --color-dark: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-dark antialiased selection:bg-brand/30 selection:text-dark;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-dark font-[900];
+  }
+}
+
+.bento-card {
+  @apply bg-white border-[3px] border-dark shadow-[8px_8px_0px_0px_#1A1A1A] transition-all duration-200;
+}
+
+.bento-card:hover {
+  @apply -translate-x-[2px] -translate-y-[2px] shadow-[10px_10px_0px_0px_#FF4E00];
+}
+
+.tag {
+  @apply px-3 py-1 rounded-full border-2 border-dark text-[0.75rem] font-bold inline-flex items-center justify-center;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-dark to-dark/60;
+}
+
+.perspective-container {
+  perspective: 1000px;
+}
+
+.three-d-lift {
+  transform: rotateX(5deg) rotateY(-5deg);
+  transform-style: preserve-3d;
+}
+
