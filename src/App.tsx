@@ -464,7 +464,7 @@ const About = ({ onOpenResume }: { onOpenResume: () => void }) => (
           >
             <div className="w-full aspect-[3/4] border-[3px] border-dark relative overflow-hidden bg-cream mb-4">
                <img 
-                 src="/src/images/1.png" 
+                 src="/1.png" 
                  alt="강태욱 증명사진"
                  className="w-full h-full object-cover"
                  referrerPolicy="no-referrer"
@@ -736,7 +736,7 @@ const Projects = () => (
           icon={Gamepad2}
           color="bg-hero"
           year="2025"
-          image="/src/images/3.jpg"
+          image="/3.jpg"
           link="https://www.instagram.com/reel/DO12zy-kpBU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <ProjectCard 
@@ -746,7 +746,7 @@ const Projects = () => (
           icon={Tv}
           color="bg-project-1"
           year="2024"
-          image="/src/images/4.jpg"
+          image="/4.jpg"
           link="https://www.youtube.com/shorts/iw9aO09WMp4?feature=share"
         />
         <ProjectCard 
@@ -756,7 +756,7 @@ const Projects = () => (
           icon={Tv}
           color="bg-project-2"
           year="2025"
-          image="/src/images/2.jpg"
+          image="/2.jpg"
           link="https://youtu.be/mCsemtexihs"
         />
       </div>
@@ -766,10 +766,10 @@ const Projects = () => (
 
 const Showcase = () => {
   const items = [
-    { id: 1, image: "/src/images/5.png" },
-    { id: 2, image: "/src/images/6.jpg" },
-    { id: 3, image: "/src/images/7.webp" },
-    { id: 4, image: "/src/images/8.png" },
+    { id: 1, image: "/5.png" },
+    { id: 2, image: "/6.jpg" },
+    { id: 3, image: "/7.webp" },
+    { id: 4, image: "/8.png" },
   ];
 
   return (
