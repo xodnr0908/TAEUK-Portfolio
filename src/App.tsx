@@ -135,7 +135,7 @@ const ResumeModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-8"
     >
       <div 
         className="absolute inset-0 bg-dark/80 backdrop-blur-sm" 
@@ -144,56 +144,56 @@ const ResumeModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void
       <motion.div 
         initial={{ scale: 0.9, y: 20 }}
         animate={{ scale: 1, y: 0 }}
-        className="relative w-full max-w-4xl max-h-[90vh] bg-white border-[4px] border-dark shadow-[12px_12px_0px_0px_#FF4E00] flex flex-col overflow-hidden"
+        className="relative w-full max-w-4xl max-h-[95vh] bg-white border-[3px] md:border-[4px] border-dark shadow-[8px_8px_0px_0px_#FF4E00] md:shadow-[12px_12px_0px_0px_#FF4E00] flex flex-col overflow-hidden"
       >
         {/* Header */}
-        <div className="p-6 border-b-[4px] border-dark flex justify-between items-center bg-cream">
+        <div className="p-4 md:p-6 border-b-[3px] md:border-b-[4px] border-dark flex justify-between items-center bg-cream">
            <div>
-              <h2 className="text-4xl font-display font-[900] uppercase italic tracking-tight">C.V / Resume</h2>
-              <p className="font-mono text-[10px] font-black opacity-40 uppercase tracking-[0.2em] mt-1">TAEWOOK KANG • 3D Specialist</p>
+              <h2 className="text-2xl md:text-4xl font-display font-[900] uppercase italic tracking-tight">C.V / Resume</h2>
+              <p className="font-mono text-[8px] md:text-[10px] font-black opacity-40 uppercase tracking-[0.2em] mt-1">TAEWOOK KANG • 3D Specialist</p>
            </div>
            <button 
              onClick={onClose}
-             className="w-12 h-12 bento-card bg-dark text-white flex items-center justify-center hover:bg-brand transition-colors"
+             className="w-10 h-10 md:w-12 md:h-12 bento-card bg-dark text-white flex items-center justify-center hover:bg-brand transition-colors"
            >
-             <X size={24} />
+             <X size={20} className="md:w-6 md:h-6" />
            </button>
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto p-6 md:p-12 font-bold text-dark custom-scrollbar">
-           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div className="flex-1 overflow-y-auto p-4 md:p-12 font-bold text-dark custom-scrollbar">
+           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
               
               {/* Left Column: Education & Certs */}
-              <div className="md:col-span-4 space-y-12">
+              <div className="md:col-span-4 space-y-8 md:space-y-12">
                  <section>
-                    <div className="flex items-center gap-3 mb-6">
-                       <School size={20} className="text-brand" />
-                       <h3 className="text-xl font-display font-black uppercase italic">Education</h3>
+                    <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                       <School size={18} className="text-brand md:w-5 md:h-5" />
+                       <h3 className="text-lg md:text-xl font-display font-black uppercase italic">Education</h3>
                     </div>
-                    <div className="space-y-6">
+                    <div className="space-y-4 md:space-y-6">
                        <div>
-                          <div className="text-xs opacity-40 mb-1">2021.03 - 2026.03</div>
-                          <div className="text-sm">한국영상대학교</div>
-                          <div className="text-xs font-medium opacity-60">게임애니메이션학과 학사학위 전공심화과정 재학 / 전문학사 졸업</div>
+                          <div className="text-[10px] opacity-40 mb-1">2021.03 - 2026.03</div>
+                          <div className="text-xs md:text-sm">한국영상대학교</div>
+                          <div className="text-[10px] md:text-xs font-medium opacity-60">게임애니메이션학과 학사학위 전공심화과정 재학 / 전문학사 졸업</div>
                        </div>
                        <div>
-                          <div className="text-xs opacity-40 mb-1">2018.03 - 2021.03</div>
-                          <div className="text-sm">수원정보과학고등학교</div>
-                          <div className="text-xs font-medium opacity-60">IT소프트웨어학과 졸업</div>
+                          <div className="text-[10px] opacity-40 mb-1">2018.03 - 2021.03</div>
+                          <div className="text-xs md:text-sm">수원정보과학고등학교</div>
+                          <div className="text-[10px] md:text-xs font-medium opacity-60">IT소프트웨어학과 졸업</div>
                        </div>
                     </div>
                  </section>
 
                  <section>
-                    <div className="flex items-center gap-3 mb-6">
-                       <FileText size={20} className="text-brand" />
-                       <h3 className="text-xl font-display font-black uppercase italic">Certs</h3>
+                    <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                       <FileText size={18} className="text-brand md:w-5 md:h-5" />
+                       <h3 className="text-lg md:text-xl font-display font-black uppercase italic">Certs</h3>
                     </div>
                     <div className="grid grid-cols-1 gap-2">
                        {['컴퓨터활용능력(2급)', '자동차운전면허(1종 보통)', '정보처리기능사', '3D모델링지도사', '심리상담사(1급)'].map(cert => (
-                         <div key={cert} className="flex items-center gap-2 p-3 bg-cream border-2 border-dark/10 text-xs">
-                            <CheckCircle2 size={14} className="text-brand" />
+                         <div key={cert} className="flex items-center gap-2 p-2.5 md:p-3 bg-cream border-2 border-dark/10 text-[10px] md:text-xs">
+                            <CheckCircle2 size={12} className="text-brand md:w-3.5 md:h-3.5" />
                             {cert}
                          </div>
                        ))}
@@ -201,28 +201,28 @@ const ResumeModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void
                  </section>
 
                  <section>
-                    <div className="flex items-center gap-3 mb-6">
-                       <Briefcase size={20} className="text-brand" />
-                       <h3 className="text-xl font-display font-black uppercase italic">Military</h3>
+                    <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                       <Briefcase size={18} className="text-brand md:w-5 md:h-5" />
+                       <h3 className="text-lg md:text-xl font-display font-black uppercase italic">Military</h3>
                     </div>
-                    <div className="p-4 bg-dark text-white rounded-sm">
-                       <div className="text-[10px] opacity-40 uppercase mb-1">Status</div>
-                       <div className="flex justify-between items-baseline">
-                          <span className="text-lg">군필 (병장 만기제대)</span>
-                          <span className="text-[10px] opacity-60">22.02.04 - 23.11.13</span>
+                    <div className="p-3 md:p-4 bg-dark text-white rounded-sm">
+                       <div className="text-[9px] md:text-[10px] opacity-40 uppercase mb-1">Status</div>
+                       <div className="flex justify-between items-baseline gap-2">
+                          <span className="text-base md:text-lg whitespace-nowrap">군필 (병장 만기제대)</span>
+                          <span className="text-[9px] md:text-[10px] opacity-60 text-right">22.02.04 - 23.11.13</span>
                        </div>
                     </div>
                  </section>
               </div>
 
               {/* Right Column: Experience & Activities */}
-              <div className="md:col-span-8 space-y-12">
+              <div className="md:col-span-8 space-y-8 md:space-y-12">
                  <section>
-                    <div className="flex items-center gap-3 mb-6">
-                       <History size={20} className="text-brand" />
-                       <h3 className="text-xl font-display font-black uppercase italic">Career & Projects</h3>
+                    <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                       <History size={18} className="text-brand md:w-5 md:h-5" />
+                       <h3 className="text-lg md:text-xl font-display font-black uppercase italic">Career & Projects</h3>
                     </div>
-                    <div className="space-y-8 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[2px] before:bg-dark/5">
+                    <div className="space-y-6 md:space-y-8 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[2px] before:bg-dark/5">
                       {[
                         {
                           date: '2025.11 - 2025.12',
@@ -261,35 +261,35 @@ const ResumeModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void
                           desc: '교내 행사 안건 행정 업무 및 장부 관리'
                         }
                       ].map((exp, i) => (
-                         <div key={i} className="pl-8 relative">
-                            <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-dark bg-white" />
-                            <div className="text-[10px] opacity-40 mb-1">{exp.date}</div>
-                            <h4 className="text-lg font-black leading-tight mb-1">{exp.title}</h4>
-                            <div className="text-sm text-brand italic mb-2">{exp.role}</div>
-                            <p className="text-xs opacity-60 leading-relaxed">{exp.desc}</p>
+                         <div key={i} className="pl-6 md:pl-8 relative">
+                            <div className="absolute left-0 top-1.5 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border-2 border-dark bg-white" />
+                            <div className="text-[9px] md:text-[10px] opacity-40 mb-1">{exp.date}</div>
+                            <h4 className="text-base md:text-lg font-black leading-tight mb-0.5 md:mb-1">{exp.title}</h4>
+                            <div className="text-[11px] md:text-sm text-brand italic mb-1.5 md:mb-2">{exp.role}</div>
+                            <p className="text-[10px] md:text-xs opacity-60 leading-relaxed">{exp.desc}</p>
                          </div>
                        ))}
                     </div>
                  </section>
 
                  <section>
-                    <div className="flex items-center gap-3 mb-6">
-                       <Activity size={20} className="text-brand" />
-                       <h3 className="text-xl font-display font-black uppercase italic">Major Activities</h3>
+                    <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                       <Activity size={18} className="text-brand md:w-5 md:h-5" />
+                       <h3 className="text-lg md:text-xl font-display font-black uppercase italic">Major Activities</h3>
                     </div>
-                    <div className="bento-card p-6 bg-cream border-dark/20 text-sm space-y-4">
+                    <div className="bento-card p-4 md:p-6 bg-cream border-dark/20 text-xs md:text-sm space-y-4">
                        <div>
-                          <div className="text-xs opacity-40 mb-1">2024.08 - 2025.05</div>
-                          <div className="font-black">채널박스 전공 동아리 (ChannelBox)</div>
-                          <ul className="text-xs font-medium space-y-1 mt-2 list-disc list-inside opacity-70">
+                          <div className="text-[10px] opacity-40 mb-1">2024.08 - 2025.05</div>
+                          <div className="font-black text-sm md:text-base">채널박스 전공 동아리 (ChannelBox)</div>
+                          <ul className="text-[10px] md:text-xs font-medium space-y-1 mt-2 list-disc list-inside opacity-70">
                              <li>아이콘픽쳐스 협업 3D애니메이션 '트윗츠' 숏폼 제작</li>
                              <li>트니와프렌즈: 젤리트레일 시즌4 제작 참여</li>
                              <li>졸업작품 전시회 및 PD/PM 매니지먼트 실습</li>
                           </ul>
                        </div>
-                       <div className="pt-4 border-t-2 border-dark/5">
-                          <div className="font-black">Exhibitions</div>
-                          <p className="text-xs opacity-70 mt-1">
+                       <div className="pt-3 md:pt-4 border-t-2 border-dark/5">
+                          <div className="font-black text-sm md:text-base">Exhibitions</div>
+                          <p className="text-[10px] md:text-xs opacity-70 mt-1">
                              2021/2024 교내 과제전 3D/2D 캐릭터 디자인 전시<br />
                              2024 교외 전시회 [레이어9] 2D 캐릭터 디자인 전시
                           </p>
@@ -390,12 +390,12 @@ const Navbar = () => {
 };
 
 const SectionTitle = ({ children, subtitle }: { children: React.ReactNode, subtitle?: string }) => (
-  <div className="mb-8 md:mb-12">
+  <div className="mb-6 md:mb-12">
     {subtitle && (
       <motion.span 
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        className="text-brand font-mono text-[10px] md:text-xs tracking-widest uppercase mb-2 block font-black"
+        className="text-brand font-mono text-[9px] md:text-xs tracking-widest uppercase mb-1 md:mb-2 block font-black"
       >
         {subtitle}
       </motion.span>
@@ -403,7 +403,7 @@ const SectionTitle = ({ children, subtitle }: { children: React.ReactNode, subti
     <motion.h2 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="text-3xl md:text-6xl font-display font-[900] uppercase italic"
+      className="text-2xl md:text-6xl font-display font-[900] uppercase italic"
     >
       {children}
     </motion.h2>
@@ -413,7 +413,7 @@ const SectionTitle = ({ children, subtitle }: { children: React.ReactNode, subti
 // --- Content Sections ---
 
 const Hero = () => (
-  <section className="min-h-screen relative flex items-center justify-center overflow-hidden pt-20">
+  <section className="min-h-screen relative flex items-center justify-center overflow-hidden pt-12 md:pt-20">
     <div className="absolute inset-0 z-0">
       <Canvas shadows>
         <Scene />
@@ -427,18 +427,18 @@ const Hero = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="flex justify-center gap-2 mb-8 pointer-events-auto">
-             <span className="tag bg-white">MAYA</span>
-             <span className="tag bg-white">ANIMATION</span>
+          <div className="flex justify-center gap-2 mb-6 md:mb-8 pointer-events-auto">
+             <span className="tag bg-white text-[10px] md:text-xs">MAYA</span>
+             <span className="tag bg-white text-[10px] md:text-xs">ANIMATION</span>
           </div>
           
-          <h1 className="text-6xl md:text-9xl font-display font-[900] leading-[0.8] mb-8 uppercase">
+          <h1 className="text-5xl md:text-9xl font-display font-[900] leading-[0.8] mb-6 md:mb-8 uppercase">
             <span className="block text-gradient">3D</span>
-            <span className="block text-white bg-dark px-4 inline-block transform -rotate-2">ANIMATOR</span>
+            <span className="block text-white bg-dark px-3 py-1 md:px-4 inline-block transform -rotate-2">ANIMATOR</span>
           </h1>
           
-          <div className="max-w-2xl mx-auto bento-card p-6 bg-hero pointer-events-auto mb-10">
-            <p className="text-dark text-lg md:text-2xl font-bold leading-tight">
+          <div className="max-w-2xl mx-auto bento-card p-4 md:p-6 bg-hero pointer-events-auto mb-8 md:mb-10">
+            <p className="text-dark text-base md:text-2xl font-bold leading-tight">
               팀 파이프라인과 외주 실무를 경험하며,<br className="hidden md:block" />
               난이도 높은 연출부터 최종 컷의 마감까지 책임지는<br className="hidden md:block" />
               3D 애니메이터
@@ -452,19 +452,19 @@ const Hero = () => (
 );
 
 const About = ({ onOpenResume }: { onOpenResume: () => void }) => (
-  <section id="about" className="py-20 md:py-32">
+  <section id="about" className="py-12 md:py-32">
     <div className="container mx-auto px-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
         <div className="relative perspective-container flex justify-center">
           <motion.div 
             initial={{ opacity: 0, rotateY: 20 }}
             whileInView={{ opacity: 1, rotateY: -5 }}
-            className="w-full max-w-sm bento-card bg-white overflow-hidden relative group p-4 transform-gpu shadow-xl border-[4px] border-dark cursor-pointer ring-0 hover:ring-8 ring-brand/10 transition-all"
+            className="w-full max-w-sm bento-card bg-white overflow-hidden relative group p-3 md:p-4 transform-gpu shadow-xl border-[4px] border-dark cursor-pointer ring-0 hover:ring-8 ring-brand/10 transition-all"
             onClick={onOpenResume}
           >
             <div className="w-full aspect-[3/4] border-[3px] border-dark relative overflow-hidden bg-cream mb-4">
                <img 
-                 src="/src/assets/images/regenerated_image_1779010381300.png" 
+                 src="/src/images/1.png" 
                  alt="강태욱 증명사진"
                  className="w-full h-full object-cover"
                  referrerPolicy="no-referrer"
@@ -473,8 +473,8 @@ const About = ({ onOpenResume }: { onOpenResume: () => void }) => (
             </div>
             <div className="flex justify-between items-end border-t-2 border-dark/10 pt-3">
                <div>
-                 <h3 className="font-display font-[900] text-2xl uppercase leading-none mb-1">강태욱</h3>
-                 <p className="text-[10px] font-mono font-bold opacity-40 uppercase tracking-widest">3D Animator / Artist</p>
+                 <h3 className="font-display font-[900] text-xl md:text-2xl uppercase leading-none mb-1">강태욱</h3>
+                 <p className="text-[8px] md:text-[10px] font-mono font-bold opacity-40 uppercase tracking-widest">3D Animator / Artist</p>
                </div>
                <div className="flex flex-col items-end gap-1">
                   <div className="text-[7px] font-bold text-dark/30 uppercase tracking-widest mb-1">CLICK TO VIEW CV</div>
@@ -482,10 +482,10 @@ const About = ({ onOpenResume }: { onOpenResume: () => void }) => (
                     href="https://www.instagram.com/uk_908_/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center gap-2 px-3 py-2 bg-dark text-white text-[10px] font-black uppercase tracking-widest hover:bg-brand transition-colors shadow-[4px_4px_0px_0px_#FF4E00] transform hover:translate-x-[-1px] hover:translate-y-[-1px] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
+                    className="flex items-center gap-1.5 md:gap-2 px-2 md:px-3 py-1.5 md:py-2 bg-dark text-white text-[8px] md:text-[10px] font-black uppercase tracking-widest hover:bg-brand transition-colors shadow-[3px_3px_0px_0px_#FF4E00] md:shadow-[4px_4px_0px_0px_#FF4E00] transform hover:translate-x-[-1px] hover:translate-y-[-1px] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <Instagram size={14} />
+                    <Instagram size={12} className="md:w-3.5 md:h-3.5" />
                     Instagram
                   </a>
                </div>
@@ -495,7 +495,7 @@ const About = ({ onOpenResume }: { onOpenResume: () => void }) => (
 
         <div>
           <SectionTitle subtitle="Vision & Core">Who I am</SectionTitle>
-          <div className="space-y-6 text-dark leading-relaxed text-lg font-medium">
+          <div className="space-y-4 md:space-y-6 text-dark leading-relaxed text-base md:text-lg font-medium">
             <p>
               마야(Maya)를 기반으로 복잡한 연출의 핵심 타이밍과 포징을 빠르게 파악해 내는 <span className="bg-hero px-1 font-bold">3D 애니메이터</span>입니다.
             </p>
@@ -505,22 +505,22 @@ const About = ({ onOpenResume }: { onOpenResume: () => void }) => (
             <p>
               앞뒤 컷의 자연스러운 연결(Hook-up)과 최종 화면의 완성도를 최우선으로 생각하며 철저하게 마감을 준수합니다.
             </p>
-            <div className="grid grid-cols-2 gap-4 pt-6">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 pt-4 md:pt-6">
               <div 
-                className="p-6 bento-card bg-project-1 cursor-pointer hover:bg-brand hover:text-white transition-colors group"
+                className="p-4 md:p-6 bento-card bg-project-1 cursor-pointer hover:bg-brand hover:text-white transition-colors group"
                 onClick={onOpenResume}
               >
-                 <div className="text-dark group-hover:text-white mb-2 font-black">STRIKE</div>
-                 <div className="text-dark group-hover:text-white font-[900] text-xl uppercase italic">Resume</div>
-                 <div className="text-[10px] uppercase tracking-widest font-black opacity-50 group-hover:opacity-100">Click for Detail</div>
+                 <div className="text-dark group-hover:text-white mb-2 font-black text-xs md:text-base">STRIKE</div>
+                 <div className="text-dark group-hover:text-white font-[900] text-lg md:text-xl uppercase italic">Resume</div>
+                 <div className="text-[8px] md:text-[10px] uppercase tracking-widest font-black opacity-50 group-hover:opacity-100">Click for Detail</div>
               </div>
               <div 
-                className="p-6 bento-card bg-hero cursor-pointer hover:bg-brand hover:text-white transition-all group"
+                className="p-4 md:p-6 bento-card bg-hero cursor-pointer hover:bg-brand hover:text-white transition-all group"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                 <div className="text-dark group-hover:text-white mb-2 font-black">PORTFOLIO</div>
-                 <div className="text-dark group-hover:text-white font-[900] text-xl uppercase italic">View Work</div>
-                 <div className="text-[10px] uppercase tracking-widest font-black opacity-50 group-hover:opacity-100">See Projects</div>
+                 <div className="text-dark group-hover:text-white mb-2 font-black text-xs md:text-base">PORTFOLIO</div>
+                 <div className="text-dark group-hover:text-white font-[900] text-lg md:text-xl uppercase italic">Work</div>
+                 <div className="text-[8px] md:text-[10px] uppercase tracking-widest font-black opacity-50 group-hover:opacity-100">See Projects</div>
               </div>
             </div>
           </div>
@@ -535,23 +535,23 @@ const StrengthCard = ({ icon: Icon, title, description, delay, color }: any) => 
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ delay }}
-    className={`p-8 bento-card ${color} h-full`}
+    className={`p-4 md:p-8 bento-card ${color} h-full`}
   >
-    <div className="w-12 h-12 border-[3px] border-dark flex items-center justify-center text-dark mb-8 bg-white shadow-[4px_4px_0px_0px_#1A1A1A]">
-      <Icon size={24} />
+    <div className="w-10 h-10 md:w-12 md:h-12 border-[2px] md:border-[3px] border-dark flex items-center justify-center text-dark mb-4 md:mb-8 bg-white shadow-[3px_3px_0px_0px_#1A1A1A] md:shadow-[4px_4px_0px_0px_#1A1A1A]">
+      <Icon size={20} className="md:w-6 md:h-6" />
     </div>
-    <h3 className="text-2xl font-display font-black mb-4 uppercase">{title}</h3>
-    <p className="text-dark/80 leading-relaxed font-bold text-sm">
+    <h3 className="text-base md:text-2xl font-display font-black mb-2 md:mb-4 uppercase leading-tight">{title}</h3>
+    <p className="text-dark/80 leading-relaxed font-bold text-[10px] md:text-sm">
       {description}
     </p>
   </motion.div>
 );
 
 const Strengths = () => (
-  <section id="strengths" className="py-20 md:py-32 bg-cream/50">
+  <section id="strengths" className="py-12 md:py-32 bg-cream/50">
     <div className="container mx-auto px-6">
       <SectionTitle subtitle="Professional Edge">Core Strengths</SectionTitle>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
         <StrengthCard 
           icon={Layers}
           title="Animation Structuring"
@@ -596,13 +596,13 @@ const ExperienceItem = ({ year, title, company, desc, tags, highlight }: any) =>
       <span className="text-dark/50 font-black italic">@ {company}</span>
     </div>
 
-    <div className="p-8 bento-card bg-white group-hover:bg-cream/50">
-       <p className="text-dark/70 mb-6 leading-relaxed font-bold">
+    <div className="p-4 md:p-8 bento-card bg-white group-hover:bg-cream/50">
+       <p className="text-dark/70 mb-4 md:mb-6 leading-relaxed font-bold text-xs md:text-base">
          {desc}
        </p>
-       <div className="flex flex-wrap gap-2">
+       <div className="flex flex-wrap gap-1.5 md:gap-2">
          {tags.map((tag: string) => (
-           <span key={tag} className="tag bg-cream">{tag}</span>
+           <span key={tag} className="tag bg-cream text-[9px] md:text-xs">{tag}</span>
          ))}
        </div>
     </div>
@@ -610,21 +610,21 @@ const ExperienceItem = ({ year, title, company, desc, tags, highlight }: any) =>
 );
 
 const Career = () => (
-  <section id="career" className="py-20 md:py-32">
+  <section id="career" className="py-12 md:py-32">
     <div className="container mx-auto px-6">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-20">
         <div className="lg:sticky lg:top-32 h-fit">
           <SectionTitle subtitle="The Journey">Career Timeline</SectionTitle>
-          <div className="bento-card p-8 bg-project-1 mb-8">
-            <div className="flex items-center gap-4 mb-4">
-               <div className="w-12 h-12 border-2 border-dark flex items-center justify-center bg-white shadow-[4px_4px_0px_0px_#1A1A1A]">
-                  <Clock size={24} />
+          <div className="bento-card p-6 md:p-8 bg-project-1 mb-6 md:mb-8">
+            <div className="flex items-center gap-4 mb-3 md:mb-4">
+               <div className="w-10 h-10 md:w-12 md:h-12 border-2 border-dark flex items-center justify-center bg-white shadow-[3px_3px_0px_0px_#1A1A1A] md:shadow-[4px_4px_0px_0px_#1A1A1A]">
+                  <Clock size={20} className="md:w-6 md:h-6" />
                </div>
-               <div className="font-black text-sm uppercase">YEARS OF<br />INDUSTRY</div>
+               <div className="font-black text-[10px] md:text-sm uppercase">YEARS OF<br />INDUSTRY</div>
             </div>
-            <div className="text-5xl font-display font-[900]">04+</div>
+            <div className="text-4xl md:text-5xl font-display font-[900]">04+</div>
           </div>
-          <p className="text-dark font-bold leading-relaxed">
+          <p className="text-dark font-bold leading-relaxed text-sm md:text-base">
             행정 실무부터 콘텐츠 제작까지 아우르는 하이브리드 커리어. 결과 중심적 사고를 3D 애니메이션 파이프라인에 적용합니다.
           </p>
         </div>
@@ -671,13 +671,13 @@ const ProjectCard = ({ title, type, desc, icon: Icon, color, year, image, link }
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      className={`group bento-card ${color} p-2 h-[450px] md:h-[500px] flex flex-col relative overflow-hidden ${link ? 'cursor-pointer hover:shadow-[12px_12px_0px_0px_#1A1A1A] transition-all duration-300' : ''}`}
+      className={`group bento-card ${color} p-1 md:p-2 h-[280px] md:h-[500px] flex flex-col relative overflow-hidden ${link ? 'cursor-pointer hover:shadow-[12px_12px_0px_0px_#1A1A1A] transition-all duration-300' : ''}`}
     >
       {image && (
         <div className="absolute inset-0 z-0">
           <img 
             src={image} 
-            alt={title} 
+            alt={typeof title === 'string' ? title : 'Project Image'} 
             className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500"
             referrerPolicy="no-referrer"
           />
@@ -685,28 +685,28 @@ const ProjectCard = ({ title, type, desc, icon: Icon, color, year, image, link }
         </div>
       )}
       
-      <div className="p-6 flex justify-between items-start relative z-10">
-         <span className="tag bg-white">{type}</span>
-         <span className="font-mono font-black text-xs">{year}</span>
+      <div className="p-3 md:p-6 flex justify-between items-start relative z-10">
+         <span className="tag bg-white text-[8px] md:text-base px-1.5 py-0.5">{type}</span>
+         <span className="font-mono font-black text-[9px] md:text-xs">{year}</span>
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center p-12 relative z-10">
+      <div className="flex-1 flex flex-col items-center justify-center p-4 md:p-12 relative z-10">
          {!image && (
            <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:scale-110 transition-transform duration-500">
-              <Icon size={300} strokeWidth={0.5} />
+              <Icon size={window?.innerWidth < 768 ? 100 : 300} strokeWidth={0.5} />
            </div>
          )}
-         <div className="w-16 h-16 border-[3px] border-dark bg-white rounded-full flex items-center justify-center shadow-[4px_4px_0px_0px_#1A1A1A] z-10 group-hover:bg-brand group-hover:text-white transition-colors">
-            <Icon size={32} />
+         <div className="w-10 h-10 md:w-16 md:h-16 border-[2px] md:border-[3px] border-dark bg-white rounded-full flex items-center justify-center shadow-[3px_3px_0px_0px_#1A1A1A] md:shadow-[4px_4px_0px_0px_#1A1A1A] z-10 group-hover:bg-brand group-hover:text-white transition-colors">
+            <Icon size={18} className="md:w-8 md:h-8" />
          </div>
       </div>
 
-      <div className="p-8 bg-white border-t-[3px] border-dark mt-auto relative z-10">
-         <h3 className="text-3xl font-display font-[900] uppercase mb-2 group-hover:text-brand transition-colors flex items-center gap-2">
+      <div className="p-3 md:p-8 bg-white border-t-[2px] md:border-t-[3px] border-dark mt-auto relative z-10">
+         <h3 className="text-sm md:text-3xl font-display font-[900] uppercase mb-0.5 md:mb-2 group-hover:text-brand transition-colors flex items-center gap-1 md:gap-2 leading-tight">
            {title}
-           {link && <ExternalLink size={20} className="opacity-40" />}
+           {link && <ExternalLink size={12} className="md:w-5 md:h-5 opacity-40" />}
          </h3>
-         <p className="text-dark/70 text-sm font-bold line-clamp-2">
+         <p className="text-dark/70 text-[9px] md:text-sm font-bold line-clamp-1 md:line-clamp-2">
            {desc}
          </p>
       </div>
@@ -725,28 +725,18 @@ const ProjectCard = ({ title, type, desc, icon: Icon, color, year, image, link }
 };
 
 const Projects = () => (
-  <section id="projects" className="pt-32 pb-12">
+  <section id="projects" className="pt-16 md:pt-32 pb-8 md:pb-12">
     <div className="container mx-auto px-6">
       <SectionTitle subtitle="Featured Works">Creative Portfolio</SectionTitle>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        <ProjectCard 
-          title="Tuni&Friends"
-          type="TV SERIES"
-          desc="3D 애니메이션 프로젝트 제작 참여."
-          icon={Tv}
-          color="bg-hero"
-          year="2025"
-          image="/src/assets/images/regenerated_image_1779009980208.jpg"
-          link="https://youtu.be/mCsemtexihs"
-        />
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12">
         <ProjectCard 
           title={<span className="whitespace-nowrap">CROSSY FRIENDS</span>}
           type="GAME PV"
           desc={<>리깅부터 익살스러운 액션 연출까지.<br />@ Capstone Project</>}
           icon={Gamepad2}
-          color="bg-project-1"
+          color="bg-hero"
           year="2025"
-          image="/src/assets/images/regenerated_image_1779006993997.jpg"
+          image="/src/images/3.jpg"
           link="https://www.instagram.com/reel/DO12zy-kpBU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <ProjectCard 
@@ -754,10 +744,20 @@ const Projects = () => (
           type="SHORT FORM"
           desc="글로벌 애니메이션 스튜디오 협업 프로덕션."
           icon={Tv}
-          color="bg-project-2"
+          color="bg-project-1"
           year="2024"
-          image="/src/assets/images/regenerated_image_1779009683424.jpg"
+          image="/src/images/4.jpg"
           link="https://www.youtube.com/shorts/iw9aO09WMp4?feature=share"
+        />
+        <ProjectCard 
+          title="Tuni&Friends"
+          type="TV SERIES"
+          desc="3D 애니메이션 프로젝트 제작 참여."
+          icon={Tv}
+          color="bg-project-2"
+          year="2025"
+          image="/src/images/2.jpg"
+          link="https://youtu.be/mCsemtexihs"
         />
       </div>
     </div>
@@ -766,16 +766,16 @@ const Projects = () => (
 
 const Showcase = () => {
   const items = [
-    { id: 1, image: "/src/assets/images/firerobo_showcase_1779012079327.png" },
-    { id: 2, image: "/src/assets/images/teenieping_showcase_1779012224000_1779012243976.png" },
-    { id: 3, image: "/src/assets/images/regenerated_image_1779012390015.jpg" },
-    { id: 4, image: "/src/assets/images/regenerated_image_1779012390722.webp" },
+    { id: 1, image: "/src/images/5.png" },
+    { id: 2, image: "/src/images/6.jpg" },
+    { id: 3, image: "/src/images/7.webp" },
+    { id: 4, image: "/src/images/8.png" },
   ];
 
   return (
-    <section id="showcase" className="pt-8 pb-32 bg-cream/30">
+    <section id="showcase" className="pt-4 md:pt-8 pb-16 md:pb-32 bg-cream/30">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {items.map((item) => (
             <div key={item.id} className="bento-card bg-white aspect-[4/3] overflow-hidden group relative">
                {item.image ? (
@@ -790,7 +790,7 @@ const Showcase = () => {
                    <div className="absolute inset-0 border-2 border-dashed border-dark/10 m-3 flex items-center justify-center">
                       <span className="text-[10px] uppercase font-black opacity-20 italic">Visual Space {item.id}</span>
                    </div>
-                   <Monitor size={32} className="opacity-5 group-hover:opacity-10 transition-opacity" />
+                   <Monitor size={24} className="md:w-8 md:h-8 opacity-5 group-hover:opacity-10 transition-opacity" />
                  </div>
                )}
             </div>
@@ -815,20 +815,20 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 relative">
+    <section id="contact" className="py-12 md:py-32 relative">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto bento-card bg-cream p-6 md:p-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+        <div className="max-w-5xl mx-auto bento-card bg-cream p-5 md:p-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
              <div>
                 <SectionTitle subtitle="Connect">Let's build<br />something epic</SectionTitle>
-                <div className="space-y-8 mt-12 font-bold">
-                   <div className="flex items-center gap-6 group">
-                      <div className="w-14 h-14 bento-card flex items-center justify-center group-hover:bg-brand group-hover:text-white transition-colors">
-                         <Mail size={24} />
+                <div className="space-y-6 md:space-y-8 mt-8 md:mt-12 font-bold">
+                   <div className="flex items-center gap-4 md:gap-6 group">
+                      <div className="w-12 h-12 md:w-14 md:h-14 bento-card flex items-center justify-center group-hover:bg-brand group-hover:text-white transition-colors">
+                         <Mail size={20} className="md:w-6 md:h-6" />
                       </div>
                       <div>
-                         <div className="text-xs uppercase tracking-widest opacity-50 font-black">Email Me</div>
-                         <div className="text-xl">ktw5535@gmail.com</div>
+                         <div className="text-[10px] md:text-xs uppercase tracking-widest opacity-50 font-black">Email Me</div>
+                         <div className="text-lg md:text-xl">ktw5535@gmail.com</div>
                       </div>
                    </div>
                 </div>
@@ -842,21 +842,21 @@ const Contact = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     onSubmit={handleSend} 
-                    className="flex flex-col gap-6"
+                    className="flex flex-col gap-4 md:gap-6"
                    >
-                    <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase tracking-widest ml-1">Your Identity</label>
-                       <input type="text" required placeholder="Name / Studio" className="w-full bg-white border-[3px] border-dark p-4 focus:outline-none focus:bg-hero transition-all font-bold placeholder:text-dark/30" />
+                    <div className="space-y-1.5 md:space-y-2">
+                       <label className="text-[9px] md:text-[10px] font-black uppercase tracking-widest ml-1">Your Identity</label>
+                       <input type="text" required placeholder="Name / Studio" className="w-full bg-white border-[2px] md:border-[3px] border-dark p-3 md:p-4 focus:outline-none focus:bg-hero transition-all font-bold placeholder:text-dark/30 text-sm md:text-base" />
                     </div>
-                    <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase tracking-widest ml-1">Return Email</label>
-                       <input type="email" required placeholder="hello@world.com" className="w-full bg-white border-[3px] border-dark p-4 focus:outline-none focus:bg-hero transition-all font-bold placeholder:text-dark/30" />
+                    <div className="space-y-1.5 md:space-y-2">
+                       <label className="text-[9px] md:text-[10px] font-black uppercase tracking-widest ml-1">Return Email</label>
+                       <input type="email" required placeholder="hello@world.com" className="w-full bg-white border-[2px] md:border-[3px] border-dark p-3 md:p-4 focus:outline-none focus:bg-hero transition-all font-bold placeholder:text-dark/30 text-sm md:text-base" />
                     </div>
-                    <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase tracking-widest ml-1">The Mission</label>
-                       <textarea required placeholder="Project description..." className="w-full h-32 bg-white border-[3px] border-dark p-4 focus:outline-none focus:bg-hero transition-all font-bold placeholder:text-dark/30 resize-none" />
+                    <div className="space-y-1.5 md:space-y-2">
+                       <label className="text-[9px] md:text-[10px] font-black uppercase tracking-widest ml-1">The Mission</label>
+                       <textarea required placeholder="Project description..." className="w-full h-28 md:h-32 bg-white border-[2px] md:border-[3px] border-dark p-3 md:p-4 focus:outline-none focus:bg-hero transition-all font-bold placeholder:text-dark/30 resize-none text-sm md:text-base" />
                     </div>
-                    <button type="submit" className="bg-dark text-white p-6 font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_#FF4E00] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_#FF4E00] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all">
+                    <button type="submit" className="bg-dark text-white p-4 md:p-6 font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_#FF4E00] md:shadow-[6px_6px_0px_0px_#FF4E00] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#FF4E00] md:hover:shadow-[10px_10px_0px_0px_#FF4E00] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-sm md:text-base">
                        Deploy Message
                     </button>
                   </motion.form>
@@ -865,16 +865,16 @@ const Contact = () => {
                    key="success"
                    initial={{ opacity: 0, scale: 0.9 }}
                    animate={{ opacity: 1, scale: 1 }}
-                   className="flex flex-col items-center justify-center p-12 text-center"
+                   className="flex flex-col items-center justify-center p-8 md:p-12 text-center"
                  >
-                   <div className="w-24 h-24 bg-brand border-[3px] border-dark mb-8 flex items-center justify-center shadow-[6px_6px_0px_0px_#1A1A1A]">
-                      <Send size={40} className="text-white" />
+                   <div className="w-20 h-20 md:w-24 md:h-24 bg-brand border-[2px] md:border-[3px] border-dark mb-6 md:mb-8 flex items-center justify-center shadow-[4px_4px_0px_0px_#1A1A1A] md:shadow-[6px_6px_0px_0px_#1A1A1A]">
+                      <Send size={32} className="md:w-10 md:h-10 text-white" />
                    </div>
-                   <h3 className="text-4xl font-display font-[900] uppercase mb-4">Success!</h3>
-                   <p className="font-bold">Your message has been deployed.<br />I'll reach out shortly.</p>
+                   <h3 className="text-3xl md:text-4xl font-display font-[900] uppercase mb-3 md:mb-4">Success!</h3>
+                   <p className="font-bold text-sm md:text-base">Your message has been deployed.<br />I'll reach out shortly.</p>
                    <button 
                      onClick={() => setFormSent(false)}
-                     className="mt-12 text-sm font-black underline hover:text-brand"
+                     className="mt-8 md:mt-12 text-xs md:text-sm font-black underline hover:text-brand"
                    >
                      SEND ANOTHER
                    </button>
@@ -883,8 +883,6 @@ const Contact = () => {
              </AnimatePresence>
           </div>
         </div>
-
-
       </div>
     </section>
   );
